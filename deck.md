@@ -307,14 +307,14 @@ export default Layout
 
 # 😡😡😡
 
-- Breaking CLI
+- Breaking & complex CLI
 - Breaking changes in RxJS
 - Angular Element != Web Components
 - Ivy not yet
 - Poor Angular Console
 - v7: @angular/core split, @aiStore & @angular/mine, breaking compiler
 
-> Is Angular moves away of the JavaScript ecosystem?
+> Is Angular moving away from the JavaScript ecosystem?
 
 ```notes
 - CLI architecture (Bazel, breaking change, no ng eject, != LernaJS )
@@ -339,12 +339,11 @@ export default Layout
 - Prettier Vue support
 - eslint-plugin-vue (errors in templates)
 - vue-test-utils
-- Vue Devtools 5.0 (routing & performance tab, Editable Vuex state)
-- @vue/cli: v3.0 (The best in his kind 👏)
-- vue ui 😃
+- Vue Devtools 5.0 (routing & perf tab, editable Vuex state)
+- @vue/cli: v3.0 👏
 
 <img src="./images/vue-cli-build.png" width="500px"/>&nbsp;
-<img src="./images/vue-cli-analyser.png" width="500px"/>
+<img src="./images/vue-cli-analyser.png" width="450px"/>
 
 Is makes you more productive as a VueJS developer
 
@@ -357,15 +356,11 @@ Is makes you more productive as a VueJS developer
 
 ---
 
-export default Layout
-
-<BGImage src="./images/vue-cli-build.png" />
+<img src="./images/vue-cli-build.png" width="1000px"/>
 
 ---
 
-export default Layout
-
-<BGImage src="./images/vue-cli-analyser.png" />
+<img src="./images/vue-cli-analyser.png" width="1000px"/>
 
 ---
 
@@ -501,6 +496,90 @@ export default {
 
 ---
 
+# GraphQL
+GraphQL: The next generation of API design
+
+---
+
+## Usage of GraphQL
+
+- Github
+- Amazon
+- Facebook
+- KLM
+- PayPal
+- AirBnb
+- Shopify
+- Starbucks
+- EggHead
+- Kickstarter
+- Pintrest
+- Medium
+- IBM
+- Walmart
+- American Express
+- Sitecore
+- Microsoft (and not just because they bought Github)
+
+---
+
+## Solutions of GraphQL
+
+- Headless CMS (GraphCMS, wpgraphql, DataCMS, SiteCore, ...)
+- Client libraries (Apollo Client, urql, ...)
+- Server libraries (Apollo Server, Yoga, Prisma, ...)
+- Managed Services (GraphCool, AWS AppSync)
+- Platforms (JS, ruby, java, elixir, dotNet, Python)
+
+ [GraphQL Stack](https://www.graphqlstack.com/)
+
+---
+
+## More productive with GraphQL
+
+[Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
+
+<img src="./images/graphql-code-delete.png" width="1200px" />
+
+---
+
+## Apollo Client (no more Redux)
+
+<img src="./images/apollo-client.png" width="1200px" />
+
+---
+
+## Apollo Client
+
+```js
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+
+const GET_DOGS_QUERY = gql`{
+    dogs {
+        id
+        breed
+    }
+}`;
+
+@graphql(GET_DOGS_QUERY)
+const Dogs = ({ onDogSelected, data: { loading, dogs, error } }) => {
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  return (
+    <ul>{dogs.map(dog => <li key={dog.id}>{dog.breed}</li>)}</ul>
+  );
+};
+```
+
+---
+
+## Learn Graphqh
+
+### [https://www.howtographql.com/](https://www.howtographql.com/)
+
+---
+
 # Pre-render vs SSR vs CSR
 Render what, where, ...?
 
@@ -516,35 +595,26 @@ Render what, where, ...?
 
 <img src="./images/SSR.png" width="1000px" />
 
+You need nodeJS on the server to render.
+
 ---
 
 ## Server Side Render (SSR)
-
-You need nodeJS on the server to render.
 
 <br/>
 <div style={{fontSize: 70, textAlign: 'left'}}>
     <Appear>
         <li>Angular Universal 😥</li>
         <li>Next - React SSR Done Right</li>
-        <li>Nuxt - Universal Vue.js Applications</li>
+        <li>Nuxt - Universal Vue.js Apps</li>
     </Appear>
 </div>
 
 ---
 
-## Pre-rendering
+## Performance matters
 
-Render the complete site at build time
-
-<br/>
-<div style={{fontSize: 70, textAlign: 'left'}}>
-    <Appear>
-        <li>Gatsby - 🚀 Blazing fast site gen. for React</li>
-        <li>VuePress - Vue Static Site Generator</li>
-    </Appear>
-</div>
-
+<img src="./images/performance-matters.png" width="600px" />
 ---
 
 ## www.realdolmen.com
@@ -561,21 +631,41 @@ Lighthouse Audit
 
 ---
 
-## euri.com
+## www.vente-exclusive.com
 
-# 🙌
+<img src="./images/audit-venteExclusive.png" width="1000px" />
+
+---
+
+## euri.com ?
+
+---
+
+## euri.com 👏
 
 <img src="./images/chrome-lighthouse.png" width="1000px" />
 
 ---
 
-## euri.com
+## Pre-rendering
 
-# 🙌
+Render the complete site at build time
 
-WebPageTest
+<br/>
+<div style={{fontSize: 60, textAlign: 'left'}}>
+    <Appear>
+        <li>Jekyll & Hugo</li>
+        <li>Gatsby - 🚀 Blazing fast site gen. for React</li>
+        <li>VuePress - Vue Static Site Generator</li>
+    </Appear>
+</div>
 
-<img src="./images/WebPageTest.png" width="1000px" />
+---
+
+## Gatsby
+
+<img src="./images/gatsby.png" width="1000px" />
+
 
 ---
 
@@ -597,7 +687,7 @@ The building blocks
 <br/>
 <div style={{fontSize: 70, textAlign: 'left'}}>
     <Appear>
-        <li>Angular Elements (NO NOT THIS ONE)</li>
+        <li>(NOT) Angular Elements</li>
         <li>Polymer Library v3</li>
         <li>Ionic Stencil</li>
         <li>VueJS</li>
@@ -621,7 +711,6 @@ import { Component, Prop } from '@stencil/core';
 })
 export class MyComponent {
   @Prop() name: string;
-
   render() {
     return (
       <p>
@@ -658,113 +747,10 @@ Use
 </html>
 ```
 
-
 ---
 
 # Thank You 👋
-### [https://gql-all-things.now.sh/](https://gql-all-things.now.sh/)
-
-
----
-
-
-# Code 👍
-
-```js
-class MyClass {
-    constructor(props) {
-        super(props)
-    }
-}
-```
-
-<div style={{fontSize: 80, textAlign: 'left'}}>
-<ul>
-    <li>
-        Two
-        <ul>
-            <li>aaaaa</li>
-            <li>aaaaa</li>
-        </ul>
-    </li>
-    <li>Two</li>
-    <li>Three</li>
-</ul>
-</div>
-
----
-
-# Hello
-
-> Just some nice text that is verry long to enter
-
-aaaaa
-- Item one
-- Item two
-- Item three
-
-aaaa
-- Item one
-- Item two
-- Item three
-
-```html
-<html>
-    <div attr="0000">
-        <div attr="0000">
-            <div attr="0000">
-            </div>
-        </div>
-    </div>
-</html>
-```
-
-```bash
-# test comment
-$ command ls
-```
-
----
-
-# Table
-
-| One           | Two           |
-| ------------- | ------------- |
-| Cell          | Cell          |
-| Cell          | Cell          |
-
----
-
-export default Split
-
-<img src="./front-end-be.png" />
-
-# Meow
-
-- test
-- test 2
-
----
-
-export default FullScreenCode
-
-```jsx
-<Button>Beep</Button>
-```
-
----
-
-## Edit this file
-
-To create your presentation
-
-```notes
-- Create speaker notes in fenced code blocks
-```
-
----
-
-<https://github.com/jxnblk/mdx-deck>
+### [https://mjr-javascript-trends-2018.now.sh/](https://mjr-javascript-trends-2018.now.sh/)
 
 ---
 
@@ -777,8 +763,3 @@ Built with MDX Deck
 ```jsx
 Deployed on now.sh
 ```
-
----
-
-# Thank You 👋
-### [https://gql-all-things.now.sh/](https://gql-all-things.now.sh/)

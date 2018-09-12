@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const IMG = styled.img`
-  width: 60vw;
+  width: 100vw;
   position: absolute;
-  left: 5%;
+  left: 0;
   z-index: -1;
   top: 50%;
   transform: translateY(-50%);
