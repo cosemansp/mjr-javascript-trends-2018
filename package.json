@@ -1,0 +1,23 @@
+{
+  "name": "mjr-javascript-trends-2018",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Presentation deck",
+  "scripts": {
+    "start": "mdx-deck deck.md",
+    "build": "mdx-deck build deck.md",
+    "pdf": "mdx-deck pdf deck.md",
+    "image": "mdx-deck screenshot deck.md",
+    "help": "mdx-deck"
+  },
+  "author": "Peter Cosemans",
+  "license": "MIT",
+  "devDependencies": {
+    "mdx-deck": "^1.6.7",
+    "mdx-deck-code-surfer": "^0.4.1",
+    "prism-react-renderer": "^0.1.3"
+  },
+  "dependencies": {
+    "react-syntax-highlighter": "^8.0.1"
+  }
+}
