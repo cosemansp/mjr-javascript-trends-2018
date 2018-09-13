@@ -26,15 +26,15 @@ By Peter Cosemans
 ---
 
 
-## The Top Trends
+# The Top Trends
 
-<div style={{fontSize: 40, textAlign: 'left'}}>
+<div style={{fontSize: 40, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>Angular, React & Vue.js</li>
         <li>Javascript Is Still Fastest-growing</li>
         <li>The rize of framework CLI's</li>
         <li>Improve testability with Jest, Storybook & CypressJS</li>
-        <li>GraphQL my favorite REST</li>
+        <li>GraphQL, your next API</li>
         <li>Client Side, Server Side and Pre-rendering</li>
         <li>Deployment to Netlify & Serverless</li>
     </Appear>
@@ -232,7 +232,7 @@ export default Layout
 
 <BGImage src="./images/audiance.jpeg" />
 
-## What framework are you using?
+## What front-end framework are you using?
 
 <br/>
 <div style={{fontSize: 80, textAlign: 'left'}}>
@@ -496,42 +496,70 @@ export default {
 
 ---
 
+export default Layout
+
+<BGImage src="./images/audiance.jpeg" />
+
+## What API implementation are you using
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>FTP</li>
+        <li>RPC - XML</li>
+        <li>SOAP</li>
+        <li>REST</li>
+        <li>GraphQL</li>
+        <li>Other (or none)</li>
+    </Appear>
+</div>
+
+---
+
+
 # GraphQL
 GraphQL: The next generation of API design
+
+<img src="./images/graphql.jpeg" width="700px"/>
 
 ---
 
 ## Usage of GraphQL
 
-- Github
-- Amazon
 - Facebook
+- Github, Amazon
 - KLM
 - PayPal
 - AirBnb
-- Shopify
-- Starbucks
-- EggHead
-- Kickstarter
+- EggHead & Medium
 - Pintrest
-- Medium
 - IBM
-- Walmart
+- Walmart, Shopify & Starbucks
 - American Express
-- Sitecore
+- Sitecore, ContentFull, DatoCMS, WordPress, ...
 - Microsoft (and not just because they bought Github)
+- [...](https://graphql.org/users/)
 
 ---
 
 ## Solutions of GraphQL
 
-- Headless CMS (GraphCMS, wpgraphql, DataCMS, SiteCore, ...)
-- Client libraries (Apollo Client, urql, ...)
+- Headless CMS (GraphCMS, wpgraphql, DataCMS, SiteCore, Mozaik, ...)
+- Client libraries (Apollo Client, AWS Amplify, urql, ...)
 - Server libraries (Apollo Server, Yoga, Prisma, ...)
-- Managed Services (GraphCool, AWS AppSync)
-- Platforms (JS, ruby, java, elixir, dotNet, Python)
+- Managed Services (GraphCool, AWS AppSync, Apollo Engine)
+- Platforms (JS, ruby, java, elixir, dotNet, php, python)
+- New (Subscriptions, stitching, code generation)
 
  [GraphQL Stack](https://www.graphqlstack.com/)
+
+---
+
+## Apollo Client (no more Redux)
+
+<img src="./images/apollo-client.png" width="1100px" />
+
+When using Apollo & GraphQL, in 90% of the cases, you don't need Redux, MobX, ngrx, Observables or RxJS
 
 ---
 
@@ -540,12 +568,6 @@ GraphQL: The next generation of API design
 [Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
 
 <img src="./images/graphql-code-delete.png" width="1200px" />
-
----
-
-## Apollo Client (no more Redux)
-
-<img src="./images/apollo-client.png" width="1200px" />
 
 ---
 
@@ -580,7 +602,33 @@ const Dogs = ({ onDogSelected, data: { loading, dogs, error } }) => {
 
 ---
 
-# Pre-render vs SSR vs CSR
+export default Layout
+
+<BGImage src="./images/audiance.jpeg" />
+
+## What is your web app target?
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>Private Corporate Application</li>
+        <li>Customer Facing Site/Apps</li>
+        <li>Mobile Apps</li>
+        <li>Other (or none)</li>
+    </Appear>
+</div>
+
+---
+
+## Performance matters
+
+For any web application
+
+<img src="./images/performance-matters.png" width="600px" />
+
+---
+
+# Client Side, Server Side <br/> and Pre-rendering
 Render what, where, ...?
 
 ---
@@ -589,32 +637,37 @@ Render what, where, ...?
 
 <img src="./images/CSR.png" width="1000px" />
 
+You standard SPA application.
+
 ---
 
 ## Server Side Render (SSR)
 
 <img src="./images/SSR.png" width="1000px" />
 
+Improve SEO and noticeable performance.
+
+```notes
 You need nodeJS on the server to render.
+```
 
 ---
 
 ## Server Side Render (SSR)
 
 <br/>
-<div style={{fontSize: 70, textAlign: 'left'}}>
+<div style={{fontSize: 60, textAlign: 'left'}}>
     <Appear>
         <li>Angular Universal 😥</li>
-        <li>Next - React SSR Done Right</li>
-        <li>Nuxt - Universal Vue.js Apps</li>
+        <li>Next 6.x - React SSR Done Right</li>
+        <li>Nuxt 1.x - Universal Vue.js Apps</li>
     </Appear>
 </div>
 
 ---
 
-## Performance matters
+## Lets test ...
 
-<img src="./images/performance-matters.png" width="600px" />
 ---
 
 ## www.realdolmen.com
@@ -672,6 +725,9 @@ Render the complete site at build time
 # Web-Components
 The building blocks of the future
 
+<img src="./images/web-components.png" width="800px" />
+
+
 ```notes
 The building blocks
 - HTML Templates and slots
@@ -687,9 +743,9 @@ The building blocks
 <br/>
 <div style={{fontSize: 70, textAlign: 'left'}}>
     <Appear>
-        <li>(NOT) Angular Elements</li>
+        <li>(NOT YET) Angular Elements</li>
         <li>Polymer Library v3</li>
-        <li>Ionic Stencil</li>
+        <li>Ionic StencilJS</li>
         <li>VueJS</li>
     </Appear>
 </div>
@@ -745,6 +801,180 @@ Use
         <my-sample prop="hello"></my-sample>
     </body>
 </html>
+```
+
+---
+
+export default Layout
+
+<BGImage src="./images/audiance.jpeg" />
+
+## What testing framework are you using?
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>Karma/Jasmine</li>
+        <li>Mocha/Chai/Sinon</li>
+        <li>Jest 🙂</li>
+        <li>None, other</li>
+        <li>StoryBook 😍</li>
+    </Appear>
+</div>
+
+---
+
+# Jest is the rising star
+
+<img src="./images/npm-downloads-ut.png" width="1200px" />
+
+- Default on React project
+
+- Preferred on VueJS projects
+
+- Snapshot testing is awesome
+
+---
+
+
+<img src="./images/storybook.png" width="1000px" />
+
+# Storybook is your new friend
+
+- Component Driven Development
+- Component Library
+- Visual Component Development & Testing
+- Documentation
+- Available for: Angular, React, VueJS, Polymer, HTML/CSS
+
+[Live Sample - React](https://release-3-4--storybooks-official.netlify.com/?knob-Text=Submit&selectedKind=Components%7CForm%2FButton&selectedStory=with%20onclick&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Fstories%2Fstories-panel)
+[Live Sample - Angular](https://release-3-4--storybooks-angular.netlify.com/?selectedKind=Button&selectedStory=with%20text&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Fstories%2Fstories-panel)
+
+---
+
+export default Layout
+
+<BGImage src="./images/audiance.jpeg" />
+
+## What e2e test framework are you using?
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>None</li>
+        <li>Protractor (angular)</li>
+        <li>Nightwatch</li>
+        <li>Puppeteer</li>
+        <li>TestCafe</li>
+        <li>Cypress 🙂</li>
+        <li>Other</li>
+    </Appear>
+</div>
+
+---
+
+## Rizing stars: Puppeteer & Cypress
+
+<img src="./images/npm-downloads-e2e.png" width="1200px" />
+
+---
+
+<img src="./images/Cypress.io.png" width="1000px" />
+
+- Fast, easy and reliable testing
+
+- Watch and Auto reload
+
+- Time travel
+
+- For anything that runs in a browser
+
+[Cypress](https://www.cypress.io/)
+
+---
+
+export default Layout
+
+<BGImage src="./images/audiance.jpeg" />
+
+## Where do you deploy your NodeJS app
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>Virtual Machine (AWS, Azure, Google)</li>
+        <li>Docker</li>
+        <li>App Engine (Heroku, Azure, AWS, Google)</li>
+        <li>Zeit Now 🙂</li>
+    </Appear>
+</div>
+
+---
+
+<img src="./images/now.png" width="1600px" />
+
+[Now](https://zeit.co/now)
+
+---
+
+export default Layout
+
+<BGImage src="./images/audiance.jpeg" />
+
+## Where do you deploy your static app's
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>Virtual Machine (AWS, Azure, Google)</li>
+        <li>Docker</li>
+        <li>App Engine (Heroku, Azure, AWS, Google)</li>
+        <li>Static Storage (S3 or Azure Blob Storage)</li>
+        <li>GitHub Pages</li>
+        <li>Zeit Now</li>
+        <li>Surge.sh</li>
+        <li>Netlify 🙂</li>
+    </Appear>
+</div>
+
+---
+
+<img src="./images/netlify.png" width="600px" />
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>CDN Hosting</li>
+        <li>HTTPS is automatic</li>
+        <li>Full cache control</li>
+        <li>Automate build & deployment</li>
+        <li>Identity, Functions, Forms</li>
+        <li>Low pricing strategy</li>
+    </Appear>
+</div>
+
+[Netlify](https://www.netlify.com/)
+
+
+---
+
+# Honorable Mention
+
+<br/>
+<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+    <Appear>
+        <li>DateFns (a modern date library)</li>
+        <li>Babel 7.0</li>
+        <li>TypeScript 3.0</li>
+        <li>LogLevel (universal logging library)</li>
+        <li>Capacitor (replaces Cordova)</li>
+        <li>React Native (still strong)</li>
+        <li>Flutter ( vs React Native)</li>
+    </Appear>
+</div>
+
+```notes
+- Babel: Release 7 starts with a big cleanup, ready for the future
 ```
 
 ---
