@@ -1,5 +1,4 @@
 {
-  "name": "now-docker",
-  "alias": ["now-docker"],
-  "type": "docker"
+  "name": "now-micro",
+  "alias": ["now-micro"]
 }

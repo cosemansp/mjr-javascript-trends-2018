@@ -1,10 +1,10 @@
 import { Head } from 'mdx-deck'
-import { Notes, Image, Appear } from 'mdx-deck'
+import { Notes, Image } from 'mdx-deck'
 import { Split, SplitRight } from 'mdx-deck/layouts'
 import { FullScreenCode } from 'mdx-deck/layouts'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
-// import Appear from './components/Appear'
+import Appear from './components/Appear'
 import { Referer } from './components/Referer'
 import { BGImage } from './components/BgImage'
 
@@ -119,27 +119,6 @@ function async getAllUsers() {
 
 ---
 
-## ES Modules (without webpack)
-
-Native ES Modules in NodeJS (v10)
-
-```js
-// lib.mjs
-export function add(x, y) { return x + y }
-
-// main.mjs
-import { add } from './lib'
-```
-
-Loading ES modules in browser
-
-```html
-<script scr="lib.mjs" type="module">
-```
-
-
----
-
 ## Class fields
 ### (ES stage-3, TS 1.x)
 
@@ -163,32 +142,6 @@ class MyClass {
 const x = 123_234_242;
 const y = 123234242;
 x === y;    // true
-```
-
----
-
-## Dynamic import
-### (ES stage-3, TS2.4)
-
-```js
-const moduleSpecifier = './dir/someModule.js';
-import(moduleSpecifier)
-    .then(someModule => someModule.foo());
-```
-
-WebPack can do code splitting on Dynamic imports
-
----
-
-## Optional catch binding
-### (ES stage-3, TS 2.5)
-
-```js
-let parseValue = defaultValue;
-try {
-    parseResult = JSON.parse(val)
-}
-catch {}
 ```
 
 ---
@@ -235,7 +188,7 @@ export default Layout
 ## What front-end framework are you using?
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: "50px"}}>
     <Appear>
         <li>AngularJS</li>
         <li>Angular</li>
@@ -249,7 +202,7 @@ export default Layout
 
 ## GitHub Stars
 
-<img src="./images/front-end-github-stars.png" width="800px" />
+<img src="./images/front-end-github-stars.png" width="600px" />
 
 ---
 
@@ -259,23 +212,23 @@ export default Layout
 
 ---
 
-## Usage
+## Frameworks Usage
 
-<img src="./images/frond-end-world.png" width="400px" />&nbsp;
-<img src="./images/front-end-be.png" width="371px" />&nbsp;
-<img src="./images/front-end-nl.png" width="399px" />
+<img src="./images/frond-end-world.png" width="375px" />&nbsp;
+<img src="./images/front-end-be.png" width="348px" />&nbsp;
+<img src="./images/front-end-nl.png" width="376px" />
 
 ---
 
 ## Use & Intrest
 
-<img src="./images/front-end.png" width="1200px" />
+<img src="./images/front-end.png" width="1000px" />
 
 ---
 
 ## Stack Overflow
 
-<img src="./images/stack-overflow-stats-frontend.png" width="1200px" />
+<img src="./images/stack-overflow-stats-frontend.png" width="900px" />
 
 ---
 
@@ -291,12 +244,11 @@ export default Layout
 - RxJS 6.0 (three-shaking)
 - Tree-shakable providers
 - Consistent versions (cli, material, router, ...)
-- Ivy Renderer
-- Angular Elements (web components)
+- Ivy Renderer & Angular Elements (web components)
 - Angular Console
 
-<img src="./images/angular-console.png" width="500px"/>&nbsp;
-<img src="./images/angular-console.build.png" width="500px"/>
+<img src="./images/angular-console.png" width="350px"/>&nbsp;
+<img src="./images/angular-console.build.png" width="350px"/>
 
 ```notes
 - CLI: ng update and ng add (schematics)
@@ -342,9 +294,6 @@ export default Layout
 - Vue Devtools 5.0 (routing & perf tab, editable Vuex state)
 - @vue/cli: v3.0 👏
 
-<img src="./images/vue-cli-build.png" width="500px"/>&nbsp;
-<img src="./images/vue-cli-analyser.png" width="450px"/>
-
 Is makes you more productive as a VueJS developer
 
 ```notes
@@ -356,11 +305,11 @@ Is makes you more productive as a VueJS developer
 
 ---
 
-<img src="./images/vue-cli-build.png" width="1000px"/>
+<img src="./images/vue-cli-build.png" width="900px"/>
 
 ---
 
-<img src="./images/vue-cli-analyser.png" width="1000px"/>
+<img src="./images/vue-cli-analyser.png" width="800px"/>
 
 ---
 
@@ -433,10 +382,9 @@ import { ButtonComponent } from './components/button.component'
 
 ---
 
-## React with styles components
+## 😍 Styles Components 😍
 
 ```js
-import React from 'react';
 import styled from 'styled-components';
 const Button = styled.button`
   font-size: 1.5em;
@@ -450,8 +398,6 @@ const Button = styled.button`
 `;
 export default Button
 ```
-
- # 😍 😍 😍
 
 ---
 
@@ -503,13 +449,13 @@ export default Layout
 ## What API implementation are you using
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>FTP</li>
         <li>RPC - XML</li>
         <li>SOAP</li>
         <li>REST</li>
-        <li>GraphQL</li>
+        <li>GraphQL 🙂</li>
         <li>Other (or none)</li>
     </Appear>
 </div>
@@ -555,9 +501,9 @@ GraphQL: The next generation of API design
 
 ---
 
-## Apollo Client (no more Redux)
+## Apollo Client
 
-<img src="./images/apollo-client.png" width="1100px" />
+<img src="./images/apollo-client.png" width="1000px" />
 
 When using Apollo & GraphQL, in 90% of the cases, you don't need Redux, MobX, ngrx, Observables or RxJS
 
@@ -567,13 +513,14 @@ When using Apollo & GraphQL, in 90% of the cases, you don't need Redux, MobX, ng
 
 [Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
 
-<img src="./images/graphql-code-delete.png" width="1200px" />
+<img src="./images/graphql-code-delete.png" width="1000px" />
 
 ---
 
-## Apollo Client
+export default FullScreenCode
 
 ```js
+// Apollo Client
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
@@ -609,7 +556,7 @@ export default Layout
 ## What is your web app target?
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>Private Corporate Application</li>
         <li>Customer Facing Site/Apps</li>
@@ -624,7 +571,34 @@ export default Layout
 
 For any web application
 
-<img src="./images/performance-matters.png" width="600px" />
+<img src="./images/website-speed-optimization.svg" width="600px" />
+
+---
+
+## Lets test ...
+
+---
+
+## ordina.be
+
+<img src="./images/audit-axxes.png" width="900" />
+
+---
+
+## www.vente-exclusive.com
+
+<img src="./images/audit-venteExclusive.png" width="900px" />
+
+---
+
+## euri.com ?
+
+---
+
+## euri.com 👏
+
+<img src="./images/chrome-lighthouse.png" width="800px" />
+
 
 ---
 
@@ -635,7 +609,7 @@ Render what, where, ...?
 
 ## Client Side Render (CSR)
 
-<img src="./images/CSR.png" width="1000px" />
+<img src="./images/CSR.png" width="700px" />
 
 You standard SPA application.
 
@@ -643,7 +617,7 @@ You standard SPA application.
 
 ## Server Side Render (SSR)
 
-<img src="./images/SSR.png" width="1000px" />
+<img src="./images/SSR.png" width="700px" />
 
 Improve SEO and noticeable performance.
 
@@ -666,40 +640,6 @@ You need nodeJS on the server to render.
 
 ---
 
-## Lets test ...
-
----
-
-## www.realdolmen.com
-
-Lighthouse Audit
-
-<img src="./images/audit-realdolmen.png" width="1000px" />
-
----
-
-## ordina.be
-
-<img src="./images/audit-axxes.png" width="1000px" />
-
----
-
-## www.vente-exclusive.com
-
-<img src="./images/audit-venteExclusive.png" width="1000px" />
-
----
-
-## euri.com ?
-
----
-
-## euri.com 👏
-
-<img src="./images/chrome-lighthouse.png" width="1000px" />
-
----
-
 ## Pre-rendering
 
 Render the complete site at build time
@@ -708,7 +648,7 @@ Render the complete site at build time
 <div style={{fontSize: 60, textAlign: 'left'}}>
     <Appear>
         <li>Jekyll & Hugo</li>
-        <li>Gatsby - 🚀 Blazing fast site gen. for React</li>
+        <li>Gatsby - 🚀 Blazing fast site generator</li>
         <li>VuePress - Vue Static Site Generator</li>
     </Appear>
 </div>
@@ -717,7 +657,7 @@ Render the complete site at build time
 
 ## Gatsby
 
-<img src="./images/gatsby.png" width="1000px" />
+<img src="./images/gatsby.png" width="700px" />
 
 
 ---
@@ -725,7 +665,11 @@ Render the complete site at build time
 # Web-Components
 The building blocks of the future
 
-<img src="./images/web-components.png" width="800px" />
+---
+
+## Web-Components
+
+<img src="./images/web-components.png" width="600px" />
 
 
 ```notes
@@ -756,6 +700,8 @@ Ionic v4 is build with Stencil
 
 ---
 
+export default FullScreenCode
+
 ## StencilJS
 
 ```js
@@ -781,12 +727,28 @@ export class MyComponent {
 
 ## VueJS
 
+```html
+<template>
+   <p>prop value: {{myProp}}</p>
+</template>
+<script>
+export default {
+  props: ['myProp'],
+};
+</script>
+
+```
+
 Any vue component can be exported as web-component
 
 ```bash
 # create web-component
 vue build ./src/components/Sample.vue --target wc --name my-sample
 ```
+
+---
+
+## VueJS
 
 Use
 
@@ -829,9 +791,7 @@ export default Layout
 <img src="./images/npm-downloads-ut.png" width="1200px" />
 
 - Default on React project
-
 - Preferred on VueJS projects
-
 - Snapshot testing is awesome
 
 ---
@@ -861,13 +821,12 @@ export default Layout
 <br/>
 <div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
-        <li>None</li>
         <li>Protractor (angular)</li>
         <li>Nightwatch</li>
         <li>Puppeteer</li>
         <li>TestCafe</li>
+        <li>Other (or none)</li>
         <li>Cypress 🙂</li>
-        <li>Other</li>
     </Appear>
 </div>
 
@@ -882,11 +841,8 @@ export default Layout
 <img src="./images/Cypress.io.png" width="1000px" />
 
 - Fast, easy and reliable testing
-
 - Watch and Auto reload
-
 - Time travel
-
 - For anything that runs in a browser
 
 [Cypress](https://www.cypress.io/)
@@ -900,7 +856,7 @@ export default Layout
 ## Where do you deploy your NodeJS app
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>Virtual Machine (AWS, Azure, Google)</li>
         <li>Docker</li>
@@ -911,7 +867,7 @@ export default Layout
 
 ---
 
-<img src="./images/now.png" width="1600px" />
+<img src="./images/now.png" width="1200px" />
 
 [Now](https://zeit.co/now)
 
@@ -924,7 +880,7 @@ export default Layout
 ## Where do you deploy your static app's
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 60, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>Virtual Machine (AWS, Azure, Google)</li>
         <li>Docker</li>
@@ -942,7 +898,7 @@ export default Layout
 <img src="./images/netlify.png" width="600px" />
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>CDN Hosting</li>
         <li>HTTPS is automatic</li>
@@ -955,18 +911,17 @@ export default Layout
 
 [Netlify](https://www.netlify.com/)
 
-
 ---
 
-# Honorable Mention
+# Honorable Mentions
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>DateFns (a modern date library)</li>
         <li>Babel 7.0</li>
         <li>TypeScript 3.0</li>
-        <li>LogLevel (universal logging library)</li>
+        <li>LogLevel (universal logging)</li>
         <li>Capacitor (replaces Cordova)</li>
         <li>React Native (still strong)</li>
         <li>Flutter ( vs React Native)</li>

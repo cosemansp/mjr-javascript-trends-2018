@@ -1,11 +1,12 @@
 {
-  "name": "now-npm",
+  "name": "now-micro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "micro",
-    "deploy": "now --public"
+    "serve": "micro",
+    "deploy": "now --npm --public",
+    "deploy:docker": "now --docker --public"
   },
   "author": "“Peter <“peter.cosemans@gmail.com”>",
   "license": "ISC",
