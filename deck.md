@@ -1,10 +1,10 @@
 import { Head } from 'mdx-deck'
-import { Notes, Image } from 'mdx-deck'
+import { Notes, Image, Appear } from 'mdx-deck'
 import { Split, SplitRight } from 'mdx-deck/layouts'
 import { FullScreenCode } from 'mdx-deck/layouts'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
-import Appear from './components/Appear'
+// import Appear from './components/Appear'
 import { Referer } from './components/Referer'
 import { BGImage } from './components/BgImage'
 
@@ -19,38 +19,23 @@ export { default as theme } from './theme'
 # New trends in javascript development (2018)
 
 <br/>
-<img src="./images/popular-languages-js.png" width="400px" />
+<img src="./images/popular-languages-js.png" width="300px" />
 
 By Peter Cosemans
 
 ---
 
-
 # The Top Trends
 
-<div style={{fontSize: 40, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 40, textAlign: 'left', marginLeft: '-20px'}}>
     <Appear>
+        <li>Javascript Is Still Fast Growing</li>
         <li>Angular, React & Vue.js</li>
-        <li>Javascript Is Still Fastest-growing</li>
         <li>The rize of framework CLI's</li>
-        <li>Improve testability with Jest, Storybook & CypressJS</li>
         <li>GraphQL, your next API</li>
+        <li>Improve testability with Jest, Storybook & CypressJS</li>
         <li>Client Side, Server Side and Pre-rendering</li>
-        <li>Deployment to Netlify & Serverless</li>
-    </Appear>
-</div>
-
----
-
-## The Top Mobile Trends
-
-<br/>
-<div style={{fontSize: 60, textAlign: 'left'}}>
-    <Appear>
-        <li>React Native & Flutter</li>
-        <li>PWA</li>
-        <li>Web Components</li>
-        <li>Ionic 4 & Capacitor</li>
+        <li>Deployment to Now, Netlify & Serverless</li>
     </Appear>
 </div>
 
@@ -72,30 +57,20 @@ Javascript Is Still One of the Fastest-growing Languages
 
 ---
 
-## Python is Rising
-
-<img src="./images/popular-languages-python.png" width="600px" />
-<Referer>Statistics from StackOverflow</Referer>
-
----
-
 ## Expected change in use
 
 <img src="./images/EXPECTED CHANGE IN USE OVER NEXT 12 MONTHS.png" width="1200px" />
 
 ---
 
-## Coming soon to JavaScript near you
+## Coming soon to JS near you
 
 - Async/Await
-- ES Modules for NodeJS
 - Class fields (stage-3, TS 1.x)
 - Private fields/methods (stage-3, TS 2.5)
-- Optional catch binding (stage-3, TS 2.5)
 - Dynamic import (stage-3, TS2.4)
 - Numeric separators (stage-2, TS2.7)
-- Decorators (stage-2, TS1.5)
-- Optional chaining (stage-1)
+- Others...
 
 ---
 
@@ -103,10 +78,9 @@ Javascript Is Still One of the Fastest-growing Languages
 
 ```js
 function getAllUsers() {
-    return api.get('api/users')
-        .then(res => {
-            return res.data;
-        })
+  return api.get('api/users').then(res => {
+    return res.data;
+  });
 }
 ```
 
@@ -120,33 +94,36 @@ function async getAllUsers() {
 ---
 
 ## Class fields
+
 ### (ES stage-3, TS 1.x)
 
 ```js
 class MyClass {
-    state = {
-        counter: 0
-    }
-    static propTypes = {
-        name: PropTypes.String
-    }
+  state = {
+    counter: 0,
+  };
+  static propTypes = {
+    name: PropTypes.String,
+  };
 }
 ```
 
 ---
 
 ## Numeric separators
+
 ### (ES stage-2, TS2.7)
 
 ```js
 const x = 123_234_242;
 const y = 123234242;
-x === y;    // true
+x === y; // true
 ```
 
 ---
 
 ## Private fields/methods
+
 ### (ES stage-3, TS ????)
 
 ```js
@@ -165,12 +142,13 @@ class MyClass {
 ---
 
 ## Optional chaining
+
 ### (stage-1, TS ????)
 
 ```js
-const x = (foo && foo.bar) ? foo.bar.x : undefined;
+const x = foo && foo.bar ? foo.bar.x : undefined;
 
-const x = foo?.bar?.y
+const x = foo?.bar?.y;
 ```
 
 ---
@@ -200,9 +178,16 @@ export default Layout
 
 ---
 
+export default Split
+
+<img src="./images/front-end-github-stars.png" width="500px" />
+
 ## GitHub Stars
 
-<img src="./images/front-end-github-stars.png" width="600px" />
+- VueJS: 114k
+- React: 111k
+- AngularJS: 59k
+- Angular: 41k
 
 ---
 
@@ -222,13 +207,29 @@ export default Layout
 
 ## Use & Intrest
 
-<img src="./images/front-end.png" width="1000px" />
+<img src="./images/front-end.png" width="900px" />
+
+- High Intrest 🤔 - VueJS
+- Not Use Again 😫 - AngularJS, Backbone & (Angular2)
+- Use Again 😀 - React
 
 ---
 
-## Stack Overflow
+export default Split
 
-<img src="./images/stack-overflow-stats-frontend.png" width="900px" />
+<img src="./images/stack-overflow-stats-frontend.png" width="700px" />
+
+## Stack Overflow Questions
+
+- High: Angular
+- Average: React & AngularJS ⬇️
+- Low: VueJS
+
+---
+
+## Poll by Todd Motto
+
+<img src="./images/which-framework-do-you-prefer.png" width="1000px" />
 
 ---
 
@@ -241,41 +242,48 @@ export default Layout
 ## Angular 6.0
 
 - A new CLI (workspaces, library, schematics, webpack 4, ...)
-- RxJS 6.0 (three-shaking)
-- Tree-shakable providers
-- Consistent versions (cli, material, router, ...)
-- Ivy Renderer & Angular Elements (web components)
-- Angular Console
 
-<img src="./images/angular-console.png" width="350px"/>&nbsp;
-<img src="./images/angular-console.build.png" width="350px"/>
+- Smaller bundle side
+
+  - Tree-shakable RxJS 6.0 & providers
+  - Ivy Renderer
+
+- Consistent versions (cli, material, router, ...)
+
+- Angular Elements (web components)
+
+---
+
+## Angular Console
+
+<img src="./images/angular-console.png" width="500px"/>&nbsp;
+<img src="./images/angular-console.build.png" width="500px"/>
 
 ```notes
 - CLI: ng update and ng add (schematics)
 ```
+
 ---
 
 ## Angular 6.0 - 7.0
 
-# 😡😡😡
+# 😡
 
-- Breaking & complex CLI
-- Breaking changes in RxJS
+- Complex CLI
+- Breaking changes (RxJS, CLI & ng-compiler)
 - Angular Element != Web Components
 - Ivy not yet
 - Poor Angular Console
-- v7: @angular/core split, @aiStore & @angular/mine, breaking compiler
-
-> Is Angular moving away from the JavaScript ecosystem?
+- v7: 418 modules split, @aiStore & @angular/mine
 
 ```notes
 - CLI architecture (Bazel, breaking change, no ng eject, != LernaJS )
-- Ivy maybe for v7 (he and it's not compatible)
-- not really compatible and where is my `ng eject`
+- Ivy maybe for v7 (and it's not compatible)
+- CLI not really compatible and where is my `ng eject`
 - SystemJS -> WebPack -> Bazel (WTF)
 - @angular/core split to 418 modules
-- Angular moves away of JavaScript ecosystem
 - Artificial intelligence-based storage that is backwards with the ngrx
+- Angular moves away of JavaScript ecosystem
 ```
 
 ---
@@ -324,14 +332,14 @@ Is makes you more productive as a VueJS developer
 Simple button component
 
 ```js
-import React from 'react'
+import React from 'react';
 
-const Button = (props) => (
-    <button className="btn btn-default" {...props}>
-        {props.children}
-    </button>
-)
-export default Button
+const Button = props => (
+  <button className="btn btn-default" {...props}>
+    {props.children}
+  </button>
+);
+export default Button;
 ```
 
 ---
@@ -345,15 +353,17 @@ export default Button
 import { Component, Input, Ouput } from '@angular/core';
 
 @Component({
-    templateUrl: './button.component.html'
+  templateUrl: './button.component.html',
 })
 export class ButtonComponent {
-    @Input() type: String;
-    @Ouput() click = new EventEmitter();
+  @Input()
+  type: String;
+  @Ouput()
+  click = new EventEmitter();
 
-    handleClick(event) {
-        this.click.emit(event)
-    }
+  handleClick(event) {
+    this.click.emit(event);
+  }
 }
 ```
 
@@ -390,13 +400,13 @@ const Button = styled.button`
   font-size: 1.5em;
   background: transparent;
   color: white;
-  border: 2px solid #0099CC;
+  border: 2px solid #0099cc;
   border-radius: 6px;
   &:hover {
     color: red;
   }
 `;
-export default Button
+export default Button;
 ```
 
 ---
@@ -418,21 +428,20 @@ export default {
 
 ---
 
-## React 2018
+## React 2018 (v16)
 
 - New core architecture: Fiber (100% backwards compatible)
 - Faster Server Side Rendering & streaming
 - Fragments & Portals
 - Error bounderies
 - Context API
-- HOC vs render props
+- Render props
 
-## React 2019
+## React 2019 (v17)
 
 - Async rendering & Suspense 😍
 - https://build-mbfootjxoo.now.sh/
 - https://www.youtube.com/watch?v=6g3g0Q_XVb4
-
 
 ```notes
 - Fiber: Reduced File Size
@@ -462,8 +471,8 @@ export default Layout
 
 ---
 
-
 # GraphQL
+
 GraphQL: The next generation of API design
 
 <img src="./images/graphql.jpeg" width="700px"/>
@@ -483,7 +492,7 @@ GraphQL: The next generation of API design
 - Walmart, Shopify & Starbucks
 - American Express
 - Sitecore, ContentFull, DatoCMS, WordPress, ...
-- Microsoft (and not just because they bought Github)
+- Microsoft ??? (next to Github)
 - [...](https://graphql.org/users/)
 
 ---
@@ -497,7 +506,7 @@ GraphQL: The next generation of API design
 - Platforms (JS, ruby, java, elixir, dotNet, php, python)
 - New (Subscriptions, stitching, code generation)
 
- [GraphQL Stack](https://www.graphqlstack.com/)
+[GraphQL Stack](https://www.graphqlstack.com/)
 
 ---
 
@@ -599,10 +608,10 @@ For any web application
 
 <img src="./images/chrome-lighthouse.png" width="800px" />
 
-
 ---
 
 # Client Side, Server Side <br/> and Pre-rendering
+
 Render what, where, ...?
 
 ---
@@ -659,10 +668,10 @@ Render the complete site at build time
 
 <img src="./images/gatsby.png" width="700px" />
 
-
 ---
 
 # Web-Components
+
 The building blocks of the future
 
 ---
@@ -671,13 +680,11 @@ The building blocks of the future
 
 <img src="./images/web-components.png" width="600px" />
 
-
 ```notes
 The building blocks
 - HTML Templates and slots
 - Shadow Dom
 - Custom elements (extend HTML)
-
 ```
 
 ---
@@ -709,16 +716,13 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'my-first-component',
-  styleUrl: 'my-first-component.scss'
+  styleUrl: 'my-first-component.scss',
 })
 export class MyComponent {
-  @Prop() name: string;
+  @Prop()
+  name: string;
   render() {
-    return (
-      <p>
-        My name is {this.name}
-      </p>
-    );
+    return <p>My name is {this.name}</p>;
   }
 }
 ```
@@ -736,7 +740,6 @@ export default {
   props: ['myProp'],
 };
 </script>
-
 ```
 
 Any vue component can be exported as web-component
@@ -795,7 +798,6 @@ export default Layout
 - Snapshot testing is awesome
 
 ---
-
 
 <img src="./images/storybook.png" width="1000px" />
 
@@ -861,9 +863,17 @@ export default Layout
         <li>Virtual Machine (AWS, Azure, Google)</li>
         <li>Docker</li>
         <li>App Engine (Heroku, Azure, AWS, Google)</li>
-        <li>Zeit Now 🙂</li>
+        <li>Other</li>
+        <li>Zeit Now 🙂 (Quick and easy)</li>
+        <li>Serverless 😉 </li>
     </Appear>
 </div>
+
+---
+
+## NodeJS Survey
+
+<img src="./images/deploymentNodejs.png" width="1000px" />
 
 ---
 
@@ -920,8 +930,9 @@ export default Layout
     <Appear>
         <li>DateFns (a modern date library)</li>
         <li>Babel 7.0</li>
+        <li>PWA</li>
+        <li>WebPack 4.x</li>
         <li>TypeScript 3.0</li>
-        <li>LogLevel (universal logging)</li>
         <li>Capacitor (replaces Cordova)</li>
         <li>React Native (still strong)</li>
         <li>Flutter ( vs React Native)</li>
@@ -935,14 +946,17 @@ export default Layout
 ---
 
 # Thank You 👋
+
 ### [https://mjr-javascript-trends-2018.now.sh/](https://mjr-javascript-trends-2018.now.sh/)
 
 ---
 
 ### Credits
+
 ```jsx
 Built with MDX Deck
 ```
+
 <div style={{ height: 20}}></div>
 
 ```jsx
