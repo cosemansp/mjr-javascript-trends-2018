@@ -1,10 +1,10 @@
 import { Head } from 'mdx-deck'
-import { Notes, Image } from 'mdx-deck'
+import { Notes, Image, Appear } from 'mdx-deck'
 import { Split, SplitRight } from 'mdx-deck/layouts'
 import { FullScreenCode } from 'mdx-deck/layouts'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
-import Appear from './components/Appear'
+// import Appear from './components/Appear'
 import { Referer } from './components/Referer'
 import { BGImage } from './components/BgImage'
 
@@ -22,22 +22,6 @@ export { default as theme } from './theme'
 <img src="./images/popular-languages-js.png" width="300px" />
 
 By Peter Cosemans
-
----
-
-# The Top Trends
-
-<div style={{fontSize: 40, textAlign: 'left', marginLeft: '-20px'}}>
-    <Appear>
-        <li>Javascript Is Still Fast Growing</li>
-        <li>Angular, React & Vue.js</li>
-        <li>The rize of framework CLI's</li>
-        <li>GraphQL, your next API</li>
-        <li>Improve testability with Jest, Storybook & CypressJS</li>
-        <li>Client Side, Server Side and Pre-rendering</li>
-        <li>Deployment to Now, Netlify & Serverless</li>
-    </Appear>
-</div>
 
 ---
 
@@ -231,18 +215,6 @@ export default Split
 
 ---
 
-export default Split
-
-<img src="./images/stack-overflow-stats-frontend.png" width="700px" />
-
-## Stack Overflow Questions
-
-- High: Angular
-- Average: React & AngularJS ⬇️
-- Low: VueJS
-
----
-
 ## Poll by Todd Motto
 
 <img src="./images/which-framework-do-you-prefer.png" width="1000px" />
@@ -251,50 +223,15 @@ export default Split
 
 # Angular
 
-<blockquote>It's just Angular</blockquote>
-
----
-
-## Angular 6.0
-
-- A new CLI (workspaces, library, schematics, webpack 4, ...)
-
-- Smaller bundle side
-
-  - Tree-shakable RxJS 6.0 & providers
-  - Ivy Renderer
-
-- Consistent versions (cli, material, router, ...)
-
-- Angular Elements (web components)
-
-- Soon: Angular 7 - Very small bundle sizes (95-99% reduction)
-
----
-
-## Angular Console
-
-<img src="./images/angular-console.png" width="500px"/>&nbsp;
-<img src="./images/angular-console.build.png" width="500px"/>
-
-```notes
-- CLI: ng update and ng add (schematics)
-```
-
----
-
-## Angular 6.0 - 7.0
-
-# 😡
-
 <div style={{fontSize: 50, textAlign: 'left', marginLeft: "50px"}}>
     <Appear>
-        <li>Complex & Closed CLI (where is my eject?)</li>
-        <li>Breaking changes (RxJS, CLI & ng-compiler)</li>
-        <li>Angular Element != Web Components</li>
-        <li>Ivy (preview)</li>
-        <li>Angular Console (no added value)</li>
-        <li>Angular 7: Bazel, 418 modules split... @aiStore & @angular/mine</li>
+        <li>Smaller & faster build</li>
+        <li>A new CLI (workspaces, lib, plugins)</li>
+        <li>Angular Elements (web components)</li>
+        <li>😡 Closed platform</li>
+        <li>😡 Breaking changes</li>
+        <li>😡 Preview (Ivy, elements) </li>
+        <li>Angular 7...</li>
     </Appear>
 </div>
 
@@ -312,24 +249,14 @@ export default Split
 
 # VueJS
 
-<blockquote>Fast and simple</blockquote>
-
----
-
-## VueJS 2018
-
-- Full Prettier support (for vue files)
-- eslint-plugin-vue (errors in templates)
-- vue-test-utils
-- Vue Devtools 5.0 (routing & perf tab, editable Vuex state)
-- @vue/cli: v3.0 👏 (webpack 4, UI, app/lib, 100% customizable)
-
-```notes
-+ @vue/cli: 3.0 - It's super
-    + (plug-ins, web components, ts, jest, cypress)
-    + Webpack 4 + customization (merge & chain)
-    + modern browser bundle
-```
+<div style={{fontSize: 60, textAlign: 'left', marginLeft: "50px"}}>
+    <Appear>
+        <li>Better dev support (prettier, testing & devTools)</li>
+        <li>@vue/cli v3 👏 (faster build & 100% customizable)</li>
+        <li>@vue/cli console 👏</li>
+        <li>Half the size, double the performance (vNext)</li>
+    </Appear>
+</div>
 
 ---
 
@@ -343,7 +270,7 @@ export default Split
 
 ---
 
-## VueJS 2018 - Productivity
+## VueJS - Productivity
 
 ```bash
 # create a component
@@ -355,15 +282,6 @@ vue serve hello.vue
 # create library
 vue build --target lib hello.vue
 ```
-
----
-
-## VueJS 2019 (v3.0)
-
-- Double runtime performance
-- Half the size
-- Optional features tree-shakable
-- Change detection coverage via JS Proxies (no IE 11 support)
 
 ---
 
@@ -438,82 +356,15 @@ import { ButtonComponent } from './components/button.component'
 
 ---
 
-## 😍 Styles Components 😍
+# React
 
-```js
-import styled from 'styled-components';
-const Button = styled.button`
-  font-size: 1.5em;
-  background: transparent;
-  color: white;
-  border: 2px solid #0099cc;
-  border-radius: 6px;
-  &:hover {
-    color: red;
-  }
-`;
-export default Button;
-```
-
----
-
-## vs Vue
-
-```html
-<template>
-    <button class="btn btn-default" :type="type" @click="$emit($event)">
-        <slot></slot>
-    <button>
-</template>
-<script>
-export default {
-    props: ['type']
-}
-</script>
-```
-
----
-
-## React 2018 (v16)
-
-- New core architecture: Fiber (100% backwards compatible)
-- Faster Server Side Rendering & streaming
-- Fragments & Portals
-- Error bounderies
-- Context API
-- Render props
-
----
-
-## React 2019 (v17)
-
-- Async rendering & Suspense 😍
-- https://build-mbfootjxoo.now.sh/
-- https://www.youtube.com/watch?v=6g3g0Q_XVb4
-
-```notes
-- Fiber: Reduced File Size
-- Improved Error Handling
-- Suspense will change (again) the way we write application
-```
-
----
-
-export default Layout
-
-<BGImage src="./images/audiance.jpeg" />
-
-## What API implementation are you using
-
-<br/>
-<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 60, textAlign: 'left', marginLeft: "50px"}}>
     <Appear>
-        <li>FTP</li>
-        <li>RPC - XML</li>
-        <li>SOAP</li>
-        <li>REST</li>
-        <li>GraphQL 🙂</li>
-        <li>Other (or none)</li>
+        <li>Fiber (100% backwards compatible)</li>
+        <li>Faster Server Side Rendering</li>
+        <li>Fragments, Portals & Error bounderies </li>
+        <li>Async rendering & Suspense 😍 (vNext)</li>
+        <li>https://build-mbfootjxoo.now.sh/</li>
     </Appear>
 </div>
 
@@ -545,14 +396,25 @@ GraphQL: The next generation of API design
 
 ---
 
-## Solutions of GraphQL
+## Solutions for/of GraphQL
 
+<div style={{fontSize: 60, textAlign: 'left', marginLeft: "50px"}}>
+    <Appear>
+        <li>Headless CMS</li>
+        <li>Client & Server libraries</li>
+        <li>Managed Services</li>
+        <li>New: Subscriptions, Stitching, ...</li>
+    </Appear>
+</div>
+
+```notes
 - Headless CMS (GraphCMS, wpgraphql, DataCMS, SiteCore, Mozaik, ...)
 - Client libraries (Apollo Client, AWS Amplify, urql, ...)
 - Server libraries (Apollo Server, Yoga, Prisma, ...)
 - Managed Services (GraphCool, AWS AppSync, Apollo Engine)
 - Platforms (JS, ruby, java, elixir, dotNet, php, python)
 - New (Subscriptions, stitching, code generation)
+```
 
 [GraphQL Stack](https://www.graphqlstack.com/)
 
@@ -562,15 +424,7 @@ GraphQL: The next generation of API design
 
 <img src="./images/apollo-client.png" width="1000px" />
 
-When using Apollo & GraphQL, in 90% of the cases, you don't need Redux, MobX, ngrx, Observables or RxJS
-
----
-
-## More productive with GraphQL
-
 [Reducing our Redux code with React Apollo](https://blog.apollographql.com/reducing-our-redux-code-with-react-apollo-5091b9de9c2a)
-
-<img src="./images/graphql-code-delete.png" width="1000px" />
 
 ---
 
@@ -601,25 +455,7 @@ const Dogs = ({ onDogSelected, data: { loading, dogs, error } }) => {
 
 ---
 
-export default Layout
-
-<BGImage src="./images/audiance.jpeg" />
-
-## What is your web app target?
-
-<br/>
-<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
-    <Appear>
-        <li>Private Corporate Application</li>
-        <li>Customer Facing WebSite/Apps</li>
-        <li>Mobile Apps</li>
-        <li>Other (or none)</li>
-    </Appear>
-</div>
-
----
-
-## Performance matters
+# Performance matters
 
 For any web application
 
@@ -694,14 +530,14 @@ App is rendered at build time
 <div style={{fontSize: 60, textAlign: 'left'}}>
     <Appear>
         <li>Jekyll & Hugo</li>
-        <li>Gatsby - 🚀 Blazing fast site generator</li>
         <li>VuePress - Vue Static Site Generator</li>
+        <li>Gatsby - 🚀 Blazing fast site generator</li>
     </Appear>
 </div>
 
 ---
 
-### Gatsby
+## Gatsby
 
 <img src="./images/gatsby.png" width="800px" />
 
@@ -814,10 +650,10 @@ export default Layout
 <br/>
 <div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
+        <li>None</li>
         <li>Karma/Jasmine</li>
         <li>Mocha/Chai/Sinon</li>
         <li>Jest 🙂</li>
-        <li>None, other</li>
         <li>StoryBook 😍</li>
     </Appear>
 </div>
@@ -869,12 +705,6 @@ export default Layout
 
 ---
 
-## Rizing stars: Puppeteer & Cypress
-
-<img src="./images/npm-downloads-e2e.png" width="1200px" />
-
----
-
 <img src="./images/Cypress.io.png" width="1000px" />
 
 - Fast, easy and reliable testing
@@ -896,7 +726,7 @@ export default Layout
 
 <BGImage src="./images/audiance.jpeg" />
 
-## Where do you deploy your NodeJS app
+## Where do you deploy your app's
 
 <br/>
 <div style={{fontSize: 60, textAlign: 'left', marginLeft: '50px'}}>
@@ -905,8 +735,8 @@ export default Layout
         <li>Docker</li>
         <li>App Engine (Heroku, Azure, AWS, Google)</li>
         <li>Other</li>
-        <li>Zeit Now 🙂 (Quick and easy)</li>
-        <li>Serverless 😉 </li>
+        <li>Zeit Now (quick and easy) 🙂 </li>
+        <li>Netlify (for static content) 🙂 </li>
     </Appear>
 </div>
 
@@ -921,27 +751,6 @@ export default Layout
 <img src="./images/now.png" width="1200px" />
 
 [Now](https://zeit.co/now)
-
----
-
-export default Layout
-
-<BGImage src="./images/audiance.jpeg" />
-
-## Where do you deploy your static app's
-
-<br/>
-<div style={{fontSize: 60, textAlign: 'left', marginLeft: '50px'}}>
-    <Appear>
-        <li>Virtual Machine (AWS, Azure, Google)</li>
-        <li>Docker</li>
-        <li>App Engine (Heroku, Azure, AWS, Google)</li>
-        <li>Static Storage (S3 or Azure Blob Storage)</li>
-        <li>GitHub Pages</li>
-        <li>Zeit Now or Surge.sh</li>
-        <li>Netlify 🙂</li>
-    </Appear>
-</div>
 
 ---
 
@@ -969,9 +778,9 @@ export default Layout
 <div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>DateFns (a modern date library)</li>
-        <li>Babel 7.0</li>
+        <li>Babel 7.0 & TypeScript 3.0</li>
         <li>PWA</li>
-        <li>WebPack 4.x & TypeScript 3.0</li>
+        <li>WebPack 4.x</li>
         <li>Capacitor (replaces Cordova)</li>
         <li>React Native (still strong)</li>
         <li>Flutter ( vs React Native)</li>
@@ -986,7 +795,7 @@ export default Layout
 
 # Thank You 👋
 
-### [https://mjr-javascript-trends-2018-ftjsgtwyhg.now.sh](https://mjr-javascript-trends-2018-ftjsgtwyhg.now.sh)
+### [https://mjr-javascript-trends-2018-hnmmmyahqt.now.sh](https://mjr-javascript-trends-2018-hnmmmyahqt.now.sh)
 
 ---
 
