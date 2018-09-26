@@ -28,6 +28,10 @@ Slide deck of Euricom presentation
 
 - [Stack Overflow Language Trends](https://insights.stackoverflow.com/trends?utm_source=so-owned&utm_medium=blog&utm_campaign=trends&utm_content=blog-link&tags=java%2Cc%2Cc%2B%2B%2Cpython%2Cc%23%2Cvb.net%2Cjavascript%2Cassembly%2Cphp%2Cperl%2Cruby%2Cswift%2Cr%2Cobjective-c)
 
+## Learn
+
+- [Learn Graphqh](https://www.howtographql.com/)
+
 ## Testing
 
 - https://github.com/kentcdodds/dom-testing-library#readme

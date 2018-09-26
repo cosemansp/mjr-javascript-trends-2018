@@ -1,10 +1,10 @@
 import { Head } from 'mdx-deck'
-import { Notes, Image, Appear } from 'mdx-deck'
+import { Notes, Image } from 'mdx-deck'
 import { Split, SplitRight } from 'mdx-deck/layouts'
 import { FullScreenCode } from 'mdx-deck/layouts'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
-// import Appear from './components/Appear'
+import Appear from './components/Appear'
 import { Referer } from './components/Referer'
 import { BGImage } from './components/BgImage'
 
@@ -65,11 +65,14 @@ Javascript Is Still One of the Fastest-growing Languages
 
 ## Coming soon to JS near you
 
+### ES2018 - ES2019 - TS3.0
+
 - Async/Await
-- Class fields (stage-3, TS 1.x)
-- Private fields/methods (stage-3, TS 2.5)
-- Dynamic import (stage-3, TS2.4)
-- Numeric separators (stage-2, TS2.7)
+- Promise finally
+- Class fields
+- Private fields/methods
+- Dynamic import
+- Numeric separators
 - Others...
 
 ---
@@ -89,6 +92,19 @@ function async getAllUsers() {
     const res = await api.get('api/users')
     return res.data;
 }
+```
+
+---
+
+## Promise Finally
+
+### (ES stage-4, TS2.7)
+
+```js
+promise
+    .then(result => {···})
+    .catch(error => {···})
+    .finally(() => {···});
 ```
 
 ---
@@ -197,7 +213,7 @@ export default Split
 
 ---
 
-## Frameworks Usage
+## Frameworks Usage - 2017Q4
 
 <img src="./images/frond-end-world.png" width="375px" />&nbsp;
 <img src="./images/front-end-be.png" width="348px" />&nbsp;
@@ -252,6 +268,8 @@ export default Split
 
 - Angular Elements (web components)
 
+- Soon: Angular 7 - Very small bundle sizes (95-99% reduction)
+
 ---
 
 ## Angular Console
@@ -269,12 +287,16 @@ export default Split
 
 # 😡
 
-- Complex CLI
-- Breaking changes (RxJS, CLI & ng-compiler)
-- Angular Element != Web Components
-- Ivy not yet
-- Poor Angular Console
-- v7: 418 modules split, @aiStore & @angular/mine
+<div style={{fontSize: 50, textAlign: 'left', marginLeft: "50px"}}>
+    <Appear>
+        <li>Complex & Closed CLI (where is my eject?)</li>
+        <li>Breaking changes (RxJS, CLI & ng-compiler)</li>
+        <li>Angular Element != Web Components</li>
+        <li>Ivy (preview)</li>
+        <li>Angular Console (no added value)</li>
+        <li>Angular 7: Bazel, 418 modules split... @aiStore & @angular/mine</li>
+    </Appear>
+</div>
 
 ```notes
 - CLI architecture (Bazel, breaking change, no ng eject, != LernaJS )
@@ -294,15 +316,13 @@ export default Split
 
 ---
 
-## VueJS 2018 - Productivity
+## VueJS 2018
 
-- Prettier Vue support
+- Full Prettier support (for vue files)
 - eslint-plugin-vue (errors in templates)
 - vue-test-utils
 - Vue Devtools 5.0 (routing & perf tab, editable Vuex state)
-- @vue/cli: v3.0 👏
-
-Is makes you more productive as a VueJS developer
+- @vue/cli: v3.0 👏 (webpack 4, UI, app/lib, 100% customizable)
 
 ```notes
 + @vue/cli: 3.0 - It's super
@@ -313,11 +333,37 @@ Is makes you more productive as a VueJS developer
 
 ---
 
+## @vue/cli - ui (console)
+
 <img src="./images/vue-cli-build.png" width="900px"/>
 
 ---
 
 <img src="./images/vue-cli-analyser.png" width="800px"/>
+
+---
+
+## VueJS 2018 - Productivity
+
+```bash
+# create a component
+echo '<template><h1>My View App</h1></template>' > hello.vue
+
+# fast prototype
+vue serve hello.vue
+
+# create library
+vue build --target lib hello.vue
+```
+
+---
+
+## VueJS 2019 (v3.0)
+
+- Double runtime performance
+- Half the size
+- Optional features tree-shakable
+- Change detection coverage via JS Proxies (no IE 11 support)
 
 ---
 
@@ -437,6 +483,8 @@ export default {
 - Context API
 - Render props
 
+---
+
 ## React 2019 (v17)
 
 - Async rendering & Suspense 😍
@@ -475,7 +523,7 @@ export default Layout
 
 GraphQL: The next generation of API design
 
-<img src="./images/graphql.jpeg" width="700px"/>
+<img src="./images/graphql.jpeg" width="1000px"/>
 
 ---
 
@@ -528,8 +576,9 @@ When using Apollo & GraphQL, in 90% of the cases, you don't need Redux, MobX, ng
 
 export default FullScreenCode
 
+## Apollo Client Sample
+
 ```js
-// Apollo Client
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
@@ -552,12 +601,6 @@ const Dogs = ({ onDogSelected, data: { loading, dogs, error } }) => {
 
 ---
 
-## Learn Graphqh
-
-### [https://www.howtographql.com/](https://www.howtographql.com/)
-
----
-
 export default Layout
 
 <BGImage src="./images/audiance.jpeg" />
@@ -568,7 +611,7 @@ export default Layout
 <div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>Private Corporate Application</li>
-        <li>Customer Facing Site/Apps</li>
+        <li>Customer Facing WebSite/Apps</li>
         <li>Mobile Apps</li>
         <li>Other (or none)</li>
     </Appear>
@@ -616,17 +659,11 @@ Render what, where, ...?
 
 ---
 
-## Client Side Render (CSR)
-
-<img src="./images/CSR.png" width="700px" />
-
-You standard SPA application.
+<img src="./images/CSR.png" width="1000px" />
 
 ---
 
-## Server Side Render (SSR)
-
-<img src="./images/SSR.png" width="700px" />
+<img src="./images/SSR.png" width="900px" />
 
 Improve SEO and noticeable performance.
 
@@ -642,8 +679,8 @@ You need nodeJS on the server to render.
 <div style={{fontSize: 60, textAlign: 'left'}}>
     <Appear>
         <li>Angular Universal 😥</li>
-        <li>Next 6.x - React SSR Done Right</li>
-        <li>Nuxt 1.x - Universal Vue.js Apps</li>
+        <li>Next.js 7 - React SSR Done Right</li>
+        <li>Nuxt 2 - Universal Vue.js Apps</li>
     </Appear>
 </div>
 
@@ -651,7 +688,7 @@ You need nodeJS on the server to render.
 
 ## Pre-rendering
 
-Render the complete site at build time
+App is rendered at build time
 
 <br/>
 <div style={{fontSize: 60, textAlign: 'left'}}>
@@ -664,9 +701,9 @@ Render the complete site at build time
 
 ---
 
-## Gatsby
+### Gatsby
 
-<img src="./images/gatsby.png" width="700px" />
+<img src="./images/gatsby.png" width="800px" />
 
 ---
 
@@ -736,9 +773,7 @@ export class MyComponent {
    <p>prop value: {{myProp}}</p>
 </template>
 <script>
-export default {
-  props: ['myProp'],
-};
+export default { props: ['myProp'] };
 </script>
 ```
 
@@ -789,7 +824,7 @@ export default Layout
 
 ---
 
-# Jest is the rising star
+## Jest is the rising star
 
 <img src="./images/npm-downloads-ut.png" width="1200px" />
 
@@ -801,7 +836,7 @@ export default Layout
 
 <img src="./images/storybook.png" width="1000px" />
 
-# Storybook is your new friend
+## Storybook is your new friend
 
 - Component Driven Development
 - Component Library
@@ -821,13 +856,13 @@ export default Layout
 ## What e2e test framework are you using?
 
 <br/>
-<div style={{fontSize: 80, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
+        <li>None</li>
         <li>Protractor (angular)</li>
         <li>Nightwatch</li>
         <li>Puppeteer</li>
         <li>TestCafe</li>
-        <li>Other (or none)</li>
         <li>Cypress 🙂</li>
     </Appear>
 </div>
@@ -851,6 +886,12 @@ export default Layout
 
 ---
 
+## Cypress at Twitter
+
+<img src="./images/cypress-twitter.png" width="800px" />
+
+---
+
 export default Layout
 
 <BGImage src="./images/audiance.jpeg" />
@@ -858,7 +899,7 @@ export default Layout
 ## Where do you deploy your NodeJS app
 
 <br/>
-<div style={{fontSize: 70, textAlign: 'left', marginLeft: '50px'}}>
+<div style={{fontSize: 60, textAlign: 'left', marginLeft: '50px'}}>
     <Appear>
         <li>Virtual Machine (AWS, Azure, Google)</li>
         <li>Docker</li>
@@ -897,8 +938,7 @@ export default Layout
         <li>App Engine (Heroku, Azure, AWS, Google)</li>
         <li>Static Storage (S3 or Azure Blob Storage)</li>
         <li>GitHub Pages</li>
-        <li>Zeit Now</li>
-        <li>Surge.sh</li>
+        <li>Zeit Now or Surge.sh</li>
         <li>Netlify 🙂</li>
     </Appear>
 </div>
@@ -931,8 +971,7 @@ export default Layout
         <li>DateFns (a modern date library)</li>
         <li>Babel 7.0</li>
         <li>PWA</li>
-        <li>WebPack 4.x</li>
-        <li>TypeScript 3.0</li>
+        <li>WebPack 4.x & TypeScript 3.0</li>
         <li>Capacitor (replaces Cordova)</li>
         <li>React Native (still strong)</li>
         <li>Flutter ( vs React Native)</li>
@@ -947,7 +986,7 @@ export default Layout
 
 # Thank You 👋
 
-### [https://mjr-javascript-trends-2018.now.sh/](https://mjr-javascript-trends-2018.now.sh/)
+### [https://mjr-javascript-trends-2018-ftjsgtwyhg.now.sh](https://mjr-javascript-trends-2018-ftjsgtwyhg.now.sh)
 
 ---
 
